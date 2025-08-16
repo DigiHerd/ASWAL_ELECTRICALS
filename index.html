@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aswal Electricals - Professional Electrical Services</title>
+    <style>
+        :root {
+            --primary-color: #003366;
+            --secondary-color: #ff6600;
+            --light-color: #f8f9fa;
+            --dark-color: #343a40;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo h1 {
+            font-size: 1.8rem;
+            margin-left: 10px;
+        }
+        
+        .logo-icon {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 20px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('image.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+        
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #e65c00;
+        }
+        
+        section {
+            padding: 60px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .section-title h2 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 3px;
+            background-color: var(--secondary-color);
+            bottom: 0;
+            left: 25%;
+        }
+        
+        .services {
+            background-color: white;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background-color: var(--light-color);
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .service-icon {
+            background-color: var(--primary-color);
+            color: white;
+            font-size: 2rem;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .service-content {
+            padding: 20px;
+        }
+        
+        .service-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        .contact {
+            background-color: var(--light-color);
+        }
+        
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .contact-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        
+        .contact-icon {
+            font-size: 2rem;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+        
+        .contact-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .social-links a {
+            color: white;
+            margin-left: 15px;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: var(--secondary-color);
+        }
+        
+        /* Mobile Menu */
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            
+            nav {
+                width: 100%;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s;
+            }
+            
+            nav.active {
+                max-height: 300px;
+                margin-top: 20px;
+            }
+            
+            nav ul {
+                flex-direction: column;
+            }
+            
+            nav ul li {
+                margin: 10px 0;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-bolt"></i>
+                </div>
+                <h1>ASWAL ELECTRICALS</h1>
+            </div>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="container">
+            <h2>Professional Electrical Services</h2>
+            <p>Reliable and experienced electrical services for residential and commercial properties in Delhi. We provide quality workmanship with a focus on safety and customer satisfaction.</p>
+            <a href="#contact" class="btn">Contact Us Today</a>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Services</h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Maintenance & Repair</h3>
+                        <p>Comprehensive electrical maintenance and repair services to keep your systems running smoothly and safely.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>House Wiring</h3>
+                        <p>Professional house wiring services for new constructions, renovations, and upgrades with safety as our top priority.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-cog"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Motor Rewinding</h3>
+                        <p>Expert motor rewinding services to restore your electric motors to their optimal performance.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>False Ceiling Wiring</h3>
+                        <p>Specialized wiring solutions for false ceilings with neat and professional installation.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-car-battery"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Inverter Repair</h3>
+                        <p>Efficient inverter repair services to ensure uninterrupted power supply for your home or business.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-generator"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Generator Repair</h3>
+                        <p>Professional generator repair and maintenance services to keep your backup power ready when you need it.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+            </div>
+            <div class="contact-info">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3>Phone</h3>
+                    <p><a href="tel:9899517049">9899517049</a></p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Email</h3>
+                    <p><a href="mailto:contact@aswalelectricals.com">contact@aswalelectricals.com</a></p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Address</h3>
+                    <p>B-160, Qutub Vihar, Near Goyla Dairy,<br>New Delhi – 110071</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2023 Aswal Electricals. All Rights Reserved.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const nav = document.querySelector('nav');
+        
+        menuToggle.addEventListener('click', () => {
+            nav.classList.toggle('active');
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                if (nav.classList.contains('active')) {
+                    nav.classList.remove('active');
+                }
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
